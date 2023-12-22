@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const students = ["Bouzkova Klara", "Březíková Diana", "Dostal Radim", "Dulanská Petra", "Gajdušek Adam", "Galanda Milan", "Hanáková Barbora", "Hausnerová Zuzana", "Hrazdirová Anna", "Hronková Hana", "Jaroš David", "Kadláček Jan", "Ledvinová Barbora", "Markovičová Laura", "Martinec Filip", "Mihola Lukáš", "Palčík Tibor", "Podstrelený František", "Příkopová Veronika", "Skařupa David", "Slezáková Alžběta", "Škrabal Marek", "Štěpaníková Laura", "Theiberová Eliška", "Tomišková Ester", "Zborek Michael", "Zemanová Natalie", "Žydel Daniel", "Volno", "Volno"];
-
+    const students1 = ["Bouzkova Klara", "Březíková Diana", "Dulanská Petra", "Hanáková Barbora", "Hausnerová Zuzana", "Hrazdírová Anna", "Hronková Hana", "Ledvinová Barbora", "Markovičová Laura", "Příkopová Veronika", "Slezáková Alžběta", "Štěpaníková Laura", "Theiberová Eliška", "Tomišková Ester", "Zemanová Natalie"];
+    const students2 = ["Dostal Radim", "Gajdušek Adam", "Galanda Milan", "Jaroš David", "Kadláček Jan", "Martinec Filip", "Mihola Lukáš", "Palčík Tibor", "Podstrelený František", "Skařupa David", "Škrabal Marek", "Zborek Michael", "Žydel Daniel", "Volno", "Volno"];
     const tdElements = document.querySelectorAll("td");
     const fillTableButton = document.getElementById("fillTableButton");
     const downloadTableButton = document.getElementById("downloadTableButton");
@@ -15,18 +15,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Funkce pro naplnění tabulky
     function fillTable() {
-        shuffleArray(students);
-
-        // Zkontrolujte, zda je počet prvků v poli students roven počtu prvků v tdElements
-        if (students.length === tdElements.length) {
-            for (let i = 0; i < tdElements.length; i++) {
-                tdElements[i].textContent = students[i];
+        shuffleArray(students1);
+        shuffleArray(students2);
+    
+        // Zkontrolujte, zda je počet prvků v polích students1 a students2 roven počtu prvků v tdElements a pak je doplní
+        let soucet = students1.length + students2.length;    
+        if (soucet === tdElements.length) {
+            for (let i = 0; i < soucet; i++) {
+                if (i % 2 === 0) {
+                    tdElements[i].textContent = students1[i / 2]
+                } else {
+                    tdElements[i].textContent = students2[(i - 1) / 2]
+                }
             }
         } else {
             console.error("Chyba: Počet studentů se neshoduje s počtem prvků v tabulce.");
         }
-    }
-
+}
     // Funkce pro stáhnutí obsahu tabulky do souboru
     function downloadTable() {
         const tableContent = Array.from(tdElements).map(td => td.textContent).join("\t");
