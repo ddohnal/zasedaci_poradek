@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Listy žáků musí mít stejný počet položek
     const students1 = ["Bouzková Klára", "Březíková Diana", "Dulanská Petra", "Hanáková Barbora", "Hausnerová Zuzana", "Hrazdírová Anna", "Hronková Hana", "Ledvinová Barbora", "Markovičová Laura", "Příkopová Veronika", "Slezáková Alžběta", "Štěpaníková Laura", "Theiberová Eliška", "Tomišková Ester", "Zemanová Natalie"];
     const students2 = ["Dostal Radim", "Gajdušek Adam", "Galanda Milan", "Jaroš David", "Kadláček Jan", "Martinec Filip", "Mihola Lukáš", "Palčík Tibor", "Podstrelený František", "Skařupa David", "Škrabal Marek", "Zborek Michael", "Žydel Daniel", "Nikdo", "Nikdo"];
     const tdElements = document.querySelectorAll("td");
@@ -18,20 +19,25 @@ document.addEventListener("DOMContentLoaded", function () {
         shuffleArray(students1);
         shuffleArray(students2);
     
-        // Zkontrolujte, zda je počet prvků v polích students1 a students2 roven počtu prvků v tdElements a pak je doplní
-        let soucet = students1.length + students2.length;    
-        if (soucet === tdElements.length) {
-            for (let i = 0; i < soucet; i++) {
-                if (i % 2 === 0) {
-                    tdElements[i].textContent = students1[i / 2]
-                } else {
-                    tdElements[i].textContent = students2[(i - 1) / 2]
+        // Zkontrolujte, zda je pole students1 stejně dlouhé jako students2 a jestli je jejich součet roven počtu prvků v tdElements a pak je doplní do tabulky
+        if (students1.length === students2.length) {
+            let soucet = students1.length + students2.length;    
+            if (soucet === tdElements.length) {
+                for (let i = 0; i < soucet; i++) {
+                    if (i % 2 === 0) {
+                        tdElements[i].textContent = students1[i / 2];
+                    } else {
+                        tdElements[i].textContent = students2[(i - 1) / 2];
+                    }
                 }
+            } else {
+                console.error("Chyba: Počet studentů se neshoduje s počtem prvků v tabulce.");
             }
         } else {
-            console.error("Chyba: Počet studentů se neshoduje s počtem prvků v tabulce.");
+            console.error("Jeden list je větší než druhý");
         }
-}
+    }
+
     // Funkce pro stáhnutí obsahu tabulky do souboru
     function downloadTable() {
         const tableContent = Array.from(tdElements).map(td => td.textContent).join("\t");
