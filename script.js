@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 problem[2] = t
                 break;
             }
+            // Dokončit
             
         }
 
