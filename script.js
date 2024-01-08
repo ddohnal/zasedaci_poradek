@@ -8,10 +8,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Funkce pro náhodné promíchání pole
     function shuffleArray(array) {
+        let znovu = false;
+        let problem[] = ["","",""];
+        let franta = 0;
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]];
         }
+        for (let t = 0; t<10;t++) {
+            switch (array[t]) {
+            case "Michael Zborek":
+                problem[0] = t;
+                break;
+            case "Jan Kadláček":
+                problem[1] = t;
+                break;
+            case "David Jaroš":
+                problem[2] = t
+                break;
+            }
+            
+        }
+
     }
 
     // Funkce pro naplnění tabulky
