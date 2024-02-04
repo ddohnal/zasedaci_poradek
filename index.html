@@ -1,64 +1,76 @@
 <!DOCTYPE html>
 <html lang="cs">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zasedací pořádek</title>
     <link rel="icon" type="image/x-icon" href="gjs.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-    <h1>Zasedací pořádek</h1>
-    <hr><br>
-    <table border="1">
-        <tr>
-            <td id="td-1"></td>
-            <td id="td-2"></td>
-            <td id="td-3"></td>
-            <td id="td-4"></td>
-            <td id="td-5"></td>
-            <td id="td-6"></td>
-        </tr>
-        <tr>
-            <td id="td-7"></td>
-            <td id="td-8"></td>
-            <td id="td-9"></td>
-            <td id="td-10"></td>
-            <td id="td-11"></td>
-            <td id="td-12"></td>
-        </tr>
-        <tr>
-            <td id="td-13"></td>
-            <td id="td-14"></td>
-            <td id="td-15"></td>
-            <td id="td-16"></td>
-            <td id="td-17"></td>
-            <td id="td-18"></td>
-        </tr>
-        <tr>
-            <td id="td-19"></td>
-            <td id="td-20"></td>
-            <td id="td-21"></td>
-            <td id="td-22"></td>
-            <td id="td-23"></td>
-            <td id="td-24"></td>
-        </tr>
-        <tr>
-            <td id="td-25"></td>
-            <td id="td-26"></td>
-            <td id="td-27"></td>
-            <td id="td-28"></td>
-            <td id="td-29"></td>
-            <td id="td-30"></td>
-        </tr>
-    </table>
-    <button id="fillTableButton">Naplnit tabulku</button>
-    <button id="downloadTableButton">Stáhnout tabulku</button>
-    <script src="script.js"></script>
-    <br><br>
-    <a href="https://github.com/ddohnal/zasedaci_poradek/" target="_blank">Odkaz na původní GitHub repozitář</a>
-    <br><br>
-    <a href="https://github.com/miholal/zasedaci_poradek/" target="_blank">Odkaz na upravený GitHub repozitář</a>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Zasedací pořádek</h1>
+        <hr><br>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <tbody>
+                    <tr>
+                        <td id="td-1"></td>
+                        <td id="td-2"></td>
+                        <td id="td-3"></td>
+                        <td id="td-4"></td>
+                        <td id="td-5"></td>
+                        <td id="td-6"></td>
+                    </tr>
+                    <tr>
+                        <td id="td-7"></td>
+                        <td id="td-8"></td>
+                        <td id="td-9"></td>
+                        <td id="td-10"></td>
+                        <td id="td-11"></td>
+                        <td id="td-12"></td>
+                    </tr>
+                    <tr>
+                        <td id="td-13"></td>
+                        <td id="td-14"></td>
+                        <td id="td-15"></td>
+                        <td id="td-16"></td>
+                        <td id="td-17"></td>
+                        <td id="td-18"></td>
+                    </tr>
+                    <tr>
+                        <td id="td-19"></td>
+                        <td id="td-20"></td>
+                        <td id="td-21"></td>
+                        <td id="td-22"></td>
+                        <td id="td-23"></td>
+                        <td id="td-24"></td>
+                    </tr>
+                    <tr>
+                        <td id="td-25"></td>
+                        <td id="td-26"></td>
+                        <td id="td-27"></td>
+                        <td id="td-28"></td>
+                        <td id="td-29"></td>
+                        <td id="td-30"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button id="fillTableButton" class="btn btn-primary">Naplnit tabulku</button>
+        <button id="downloadTableButton" class="btn btn-success ml-2">Stáhnout tabulku</button>
+        <script src="script.js"></script>
+        <br><br>
+        <div class="text-center">
+            <a href="https://github.com/ddohnal/zasedaci_poradek/" target="_blank">Odkaz na původní GitHub repozitář</a>
+            <br><br>
+            <a href="https://github.com/miholal/zasedaci_poradek/" target="_blank">Odkaz na upravený GitHub
+                repozitář</a>
+        </div>
+    </div>
 </body>
 
 </html>
